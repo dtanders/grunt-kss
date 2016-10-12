@@ -19,11 +19,12 @@ module.exports = function(grunt) {
     });
 
     // Call kss() to generate the style guide.
-    kss(options, function(error) {
-      if (error) {
-        grunt.log.error(error);
-      }
-      done();
-    });
+	kss(options)
+	.error(function(error) {
+		grunt.log.error(error);
+	})
+	.finally(function(){
+		done();
+	});
   });
 };
