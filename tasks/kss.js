@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     .error(function(error) {
         grunt.log.error(error);
     })
-    .finally(function(){
+    .finally(function() {
         done();
     });
   });
